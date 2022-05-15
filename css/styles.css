@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+	border: none;
+	text-decoration: none;
+	list-style: none;
+	text-transform: capitalize;
+}
+:root {
+	--clr-primary: #f0ca9c;
+	--clr-white: #fff;
+	--clr-black: #161618;
+	--clr-bg: #2d8b97;
+	--hamburger: #0000008c;
+}
+body {
+	font-family: 'Poppins', sans-serif;
+}
+
+/*======nav=====*/
+
+header {
+	background-color: var(--clr-primary);
+	position: fixed;
+	width: 100%;
+	top: 0;
+}
+.container {
+	width: 1600px;
+	margin: 0 auto;
+}
+.sub-container {
+	width: 85%;
+	margin: 0 auto;
+}
+
+header .nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	height: 80px;
+}
+.nav-menu {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 2rem;
+}
+header .brand {
+	font-size: 2rem;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.hamburger {
+	display: none;
+	cursor: pointer;
+}
+.bar {
+	display: block;
+	width: 25px;
+	height: 3px;
+	margin: 5px 0;
+	transition: all 0.3s ease;
+	background: var(--clr-black);
+}
+
+/*===============home section=====================*/
+
+.home {
+	margin-top: 80px;
+	height: 70vh;
+	border: 1px solid #0000008c;
+}
+
+/*----make responsive in small screen-------*/
+@media (max-width: 1600px) {
+	.container {
+		width: 100%;
+	}
+}
+
+@media (max-width: 991px) {
+	.hamburger {
+		display: block;
+	}
+	.hamburger.active .bar:nth-child(2) {
+		opacity: 0;
+	}
+	.hamburger.active .bar:nth-child(1) {
+		transform: translateY(8px) rotate(45deg);
+	}
+	.hamburger.active .bar:nth-child(3) {
+		transform: translateY(-8px) rotate(-45deg);
+	}
+	.nav-menu {
+		position: fixed;
+		background-color: var(--hamburger);
+		left: -100%;
+		top: 80px;
+		gap: 0;
+		flex-direction: column;
+		width: 100%;
+		min-height: 100vh;
+		text-align: center;
+		transition: 0.5s;
+		align-items: center;
+		display: flex;
+		justify-content: center;
+	}
+
+	.nav-item {
+		margin: 1rem 0;
+	}
+	.nav-menu.active {
+		left: 0;
+	}
+	.nav-link {
+		color: var(--clr-white);
+		font-size: 1rem;
+	}
+}
