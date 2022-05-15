@@ -11,7 +11,8 @@
 	text-transform: capitalize;
 }
 :root {
-	--clr-primary: #f0ca9c;
+	--clr-primary: #402619;
+	--secondary: #86471b;
 	--clr-white: #fff;
 	--clr-black: #161618;
 	--clr-bg: #2d8b97;
@@ -24,7 +25,6 @@ body {
 /*======nav=====*/
 
 header {
-	background-color: var(--clr-primary);
 	position: fixed;
 	width: 100%;
 	top: 0;
@@ -72,9 +72,74 @@ header .brand {
 /*===============home section=====================*/
 
 .home {
-	margin-top: 80px;
-	height: 70vh;
-	border: 1px solid #0000008c;
+	width: 1280px;
+	margin: 0 auto;
+	margin-top: 12rem;
+	background-image: url('/images/bg.png');
+	background-repeat: no-repeat;
+}
+
+.container {
+	position: relative;
+	display: flex;
+}
+.content {
+	position: relative;
+	width: 40rem;
+	padding: 1rem;
+}
+.content h1 {
+	font-size: 4rem;
+	color: var(--clr-primary);
+}
+.content p {
+	font-size: 1rem;
+	line-height: 2.2;
+	margin-top: 2rem;
+}
+.btn {
+	display: block;
+	width: 10rem;
+	text-align: center;
+	background: var(--secondary);
+	padding: 0.9rem 1rem;
+	border-radius: 0.5rem;
+	color: var(--clr-white);
+	height: 50px;
+	margin-top: 3rem;
+}
+.img-content {
+	position: absolute;
+	width: 969px;
+	height: 498px;
+	right: -221px;
+	background: #402619;
+	border-radius: 244px 0px 0px 244px;
+}
+.img {
+	position: relative;
+	top: 1.5rem;
+	right: -21px;
+}
+
+/*============social-icons===============*/
+
+.social-icons {
+	justify-content: center;
+	align-items: center;
+	transition: 0.3s;
+	transition-property: transform;
+}
+.social-icons a {
+	position: relative;
+	color: var(--clr-light);
+	font-size: 1.9rem;
+}
+.social-icons a:not(:last-child) {
+	margin-right: 60px;
+}
+.social-icons a:hover {
+	transform: scale(1.5);
 }
 
 /*----make responsive in small screen-------*/
@@ -122,5 +187,30 @@ header .brand {
 	.nav-link {
 		color: var(--clr-white);
 		font-size: 1rem;
+	}
+	/*----------home-------------*/
+	.home {
+		display: flex;
+		width: 100%;
+	}
+
+	.content {
+		width: 30rem;
+		margin-left: 1rem 0;
+	}
+	.content h1 {
+		font-size: 1.6rem;
+	}
+	.content p {
+		font-size: 0.8rem;
+	}
+	.img-content {
+		display: none;
+	}
+	.img {
+		display: none;
+	}
+	.btn {
+		z-index: -1;
 	}
 }
