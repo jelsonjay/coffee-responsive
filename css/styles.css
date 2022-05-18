@@ -50,6 +50,7 @@ header .nav {
 	justify-content: space-between;
 	align-items: center;
 	gap: 2rem;
+	margin: 24rem;
 }
 header .brand {
 	font-size: 2rem;
